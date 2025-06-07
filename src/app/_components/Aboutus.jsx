@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
 import { IoHomeOutline } from 'react-icons/io5';
 import { CgArrowLongDown } from 'react-icons/cg';
@@ -8,7 +9,6 @@ import { gsap } from 'gsap';
 
 const Aboutus = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
   const imageRef = useRef(null);
   const welcomeRef = useRef(null);
   const line1Ref = useRef(null);
@@ -21,8 +21,9 @@ const Aboutus = () => {
 
   const images = [
     '/aboutus.jpg',
-    '/4thimage.avif',
+    '/creative-people-working-office.jpg',
     '/3rd_image_students.avif',
+    '/boy_thinking.jpg',
   ];
 
   useEffect(() => {
@@ -32,95 +33,69 @@ const Aboutus = () => {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
-  const animateImage = (newIndex) => {
-    const isMobile = window.innerWidth < 640;
+  const animateImage = (newIndex, direction = 1) => {
+    const slideOutX = direction === 1 ? 100 : -100;
+    const slideInX = direction === 1 ? -100 : 100;
 
-    gsap.fromTo(
-      imageRef.current,
-      isMobile ? { opacity: 0 } : { opacity: 0, x: direction > 0 ? 50 : -50 },
-      isMobile ? { opacity: 1, duration: 1, ease: 'power2.out' } : { opacity: 1, x: 0, duration: 1, ease: 'power2.out' }
-    );
-    gsap.fromTo(
-      welcomeRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.2 }
-    );
-    gsap.fromTo(
-      line1Ref.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.5 }
-    );
-    gsap.fromTo(
-      line2Ref.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.8 }
-    );
-    gsap.fromTo(
-      line3Ref.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 1.1 }
-    );
-    gsap.fromTo(
-      oneStopRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 1.4 }
-    );
-    gsap.fromTo(
-      buttonRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 1.7 }
-    );
-    gsap.fromTo(
-      arrowRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 2.0 }
-    );
-    gsap.fromTo(
-      socialRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 2.3, onComplete: () => gsap.set(socialRef.current, { clearProps: 'all' }) }
-    );
-    setCurrentIndex(newIndex);
+    gsap.to(imageRef.current, {
+      x: slideOutX,
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.out',
+    });
+
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, x: slideInX },
+        { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }
+      );
+    }, 500);
+
+    gsap.fromTo(welcomeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.2 });
+    gsap.fromTo(line1Ref.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.5 });
+    gsap.fromTo(line2Ref.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.8 });
+    gsap.fromTo(line3Ref.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 1.1 });
+    gsap.fromTo(oneStopRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 1.4 });
+    gsap.fromTo(buttonRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 1.7 });
+    gsap.fromTo(arrowRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 2.0 });
+    gsap.fromTo(socialRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 2.3, onComplete: () => gsap.set(socialRef.current, { clearProps: 'all' }) });
   };
 
   const handleAutoTransition = () => {
-    let newIndex;
-    if (direction > 0) {
-      newIndex = (currentIndex + 1) % images.length;
-      if (newIndex === 0) setDirection(-1);
-    } else {
-      newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-      if (newIndex === images.length - 1) setDirection(1);
-    }
-    animateImage(newIndex);
+    const newIndex = (currentIndex + 1) % images.length;
+    animateImage(newIndex, 1);
   };
 
   const handlePrev = () => {
     const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-    setDirection(-1);
-    animateImage(newIndex);
+    animateImage(newIndex, -1);
   };
 
   const handleNext = () => {
     const newIndex = (currentIndex + 1) % images.length;
-    setDirection(1);
-    animateImage(newIndex);
+    animateImage(newIndex, 1);
   };
 
   const goToImage = (index) => {
-    setDirection(index > currentIndex ? 1 : -1);
-    animateImage(index);
+    const direction = index > currentIndex || (index === 0 && currentIndex === images.length - 1) ? 1 : -1;
+    animateImage(index, direction);
   };
 
   return (
     <div className="bg-black flex justify-center pt-2 sm:pt-12">
       <div className="w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%] h-[350px] sm:h-[400px] md:h-[450px] lg:h-[520px] rounded-2xl relative border-t-2 overflow-hidden">
-        <img
+        <Image
           ref={imageRef}
           src={images[currentIndex]}
           alt={`About Us Slide ${currentIndex + 1} - Team or Mission Visual`}
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center' }}
+          width={1200}
+          height={520}
+          priority={currentIndex === 0}
         />
         <div className="absolute top-0 left-0 flex flex-col justify-center items-start text-left p-4 sm:p-6 ml-2 sm:ml-3 w-[calc(100%-48px)] sm:w-[calc(100%-48px)] md:w-[calc(100%-56px)] lg:w-[calc(100%-64px)] gap-2 sm:gap-4 md:gap-6 z-10">
           <h2
@@ -232,16 +207,19 @@ const Aboutus = () => {
         </div>
 
         <div className="absolute bottom-1 sm:bottom-6 md:bottom-8 flex justify-center gap-1 sm:gap-2 w-full z-20">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToImage(index)}
-              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-                currentIndex === index ? 'bg-yellow-400' : 'bg-white bg-opacity-50'
-              } hover:bg-opacity-75 transition-all duration-300`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+          {images
+            .map((_, index) => index)
+            .reverse() // Reverse dot order for right-to-left highlight movement
+            .map((index) => (
+              <button
+                key={index}
+                onClick={() => goToImage(index)}
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+                  currentIndex === index ? 'bg-yellow-400' : 'bg-white bg-opacity-50'
+                } hover:bg-opacity-75 transition-all duration-300`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
         </div>
       </div>
     </div>
