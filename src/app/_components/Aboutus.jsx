@@ -113,7 +113,7 @@ const Aboutus = () => {
   };
 
   return (
-    <div className="bg-black flex justify-center pt-2 sm:pt-12 min-h-screen relative">
+    <div className="bg-black flex justify-center pt-2 sm:pt-12">
       <div className="w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%] h-[350px] sm:h-[400px] md:h-[450px] lg:h-[520px] rounded-2xl relative border-t-2 overflow-hidden">
         <img
           ref={imageRef}
@@ -168,7 +168,7 @@ const Aboutus = () => {
 
         <div
           ref={arrowRef}
-          className="absolute bottom-2 sm:bottom-4 left-0 flex justify-between items-center w-full px-4 sm:px-6 z-20"
+          className="absolute bottom-0 sm:bottom-4 left-0 flex justify-between items-center w-full px-4 sm:px-6 z-20"
         >
           <button
             onClick={handlePrev}
@@ -186,10 +186,9 @@ const Aboutus = () => {
           </button>
         </div>
 
-        {/* Social Section */}
         <div
           ref={socialRef}
-          className="absolute top-4 right-0 flex flex-col justifier-center items-center bg-yellow-400 rounded-4xl p-2 gap-2 w-10 h-[200px] sm:p-2 sm:gap-3 sm:w-10 sm:h-[240px] sm:mr-1 md:w-12 md:h-[260px] md:mr-2 lg:w-14 lg:h-[280px] lg:mr-2 z-10"
+          className="absolute top-4 right-0 flex flex-col justify-center items-center bg-yellow-400 rounded-4xl p-2 gap-2 w-10 h-[200px] sm:p-2 sm:gap-3 sm:w-10 sm:h-[240px] sm:mr-1 md:w-12 md:h-[260px] md:mr-2 lg:w-14 lg:h-[280px] lg:mr-2 z-10"
           aria-label="Follow Us Social Links"
         >
           <div className="flex h-16 sm:h-16 items-center justify-center">
@@ -232,8 +231,7 @@ const Aboutus = () => {
           </a>
         </div>
 
-  
-        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 flex justify-center gap-1 sm:gap-2 w-full z-20">
+        <div className="absolute bottom-1 sm:bottom-6 md:bottom-8 flex justify-center gap-1 sm:gap-2 w-full z-20">
           {images.map((_, index) => (
             <button
               key={index}
