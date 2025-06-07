@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 font-gucina transition-colors duration-500 ${
+      className={` top-0 left-0 w-full z-50 font-gucina transition-colors duration-500 ${
         isMenuOpen ? 'bg-black text-white' : 'bg-black text-white'
       }`}
     >
@@ -44,7 +44,7 @@ const Navbar = () => {
           aria-label="Toggle navigation menu"
         >
           <svg
-            className="w-8 h-8"
+            className="w-8 h-8 text-[#FFD700]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -60,10 +60,10 @@ const Navbar = () => {
         </button>
 
         <div className="hidden lg:flex lg:items-center lg:space-x-4 xl:space-x-6">
-          <Link href="#/" className="hover:text-[#FFD700] transition-colors duration-500">
+          <Link href="#" className="hover:text-[#FFD700] transition-colors duration-500">
             Home
           </Link>
-          <Link href="#/about" className="hover:text-[#FFD700] transition-colors duration-500">
+          <Link href="#" className="hover:text-[#FFD700] transition-colors duration-500">
             About Us
           </Link>
 
@@ -94,25 +94,25 @@ const Navbar = () => {
             {isCoursesOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-black text-white border border-[#FFD700] rounded-lg shadow-lg z-50 transition-all duration-500">
                 <Link
-                  href="#/courses/web-development"
+                  href="#"
                   className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Web Development
                 </Link>
                 <Link
-                  href="#/courses/data-science"
+                  href="#"
                   className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Data Science
                 </Link>
                 <Link
-                  href="#/courses/graphic-design"
+                  href="#"
                   className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Graphic Design
                 </Link>
                 <Link
-                  href="#/courses/digital-marketing"
+                  href="#"
                   className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Digital Marketing
@@ -123,7 +123,7 @@ const Navbar = () => {
 
           <div className="relative">
             <button
-              className="hover:text-[#FFD700] transition-colors duration-500 flex items-center"
+              className="hover:text-[#FFD700] transition-colors duration-500 flex items equality-center"
               onClick={toggleWhatsNew}
               onMouseEnter={() => setIsWhatsNewOpen(true)}
               onMouseLeave={() => setIsWhatsNewOpen(false)}
@@ -148,20 +148,20 @@ const Navbar = () => {
             {isWhatsNewOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-black text-white border border-[#FFD700] rounded-lg shadow-lg z-50 transition-all duration-500">
                 <Link
-                  href="#/whatsnew/new-courses"
+                  href="#"
                   className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   New Courses
                 </Link>
                 <Link
-                  href="#/whatsnew/webinars"
+                  href="#"
                   className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Webinars
                 </Link>
                 <Link
-                  href="#/whatsnew/blog-posts"
-                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
+                  href="#"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-color duration-500"
                 >
                   Blog Posts
                 </Link>
@@ -169,16 +169,16 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link href="#/verify" className="hover:text-[#FFD700] transition-colors duration-500">
+          <Link href="#" className="hover:text-[#FFD700] transition-colors duration-500">
             Verify
           </Link>
-          <Link href="#/contact" className="hover:text-[#FFD700] transition-colors duration-500">
+          <Link href="#" className="hover:text-[#FFD700] transition-colors duration-500">
             Contact Us
           </Link>
         </div>
 
         <div className="hidden lg:flex items-center">
-          <button className="border border-[#FFD700] rounded-full py-2 px-6 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out">
+          <button className="border border-[#FFD700] rounded-full py-3 px-6 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out">
             Enroll Now
           </button>
         </div>
@@ -187,13 +187,13 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col items-center w-full bg-black text-white space-y-4 py-6 px-4 transition-all duration-500">
           <Link
-            href="#/"
+            href="#"
             className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             Home
           </Link>
           <Link
-            href="#/about"
+            href="#"
             className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             About Us
@@ -223,25 +223,25 @@ const Navbar = () => {
             >
               <div className="w-full bg-black text-white border border-[#FFD700] rounded-lg shadow-lg mt-2">
                 <Link
-                  href="#/courses/web-development"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Web Development
                 </Link>
                 <Link
-                  href="#/courses/data-science"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Data Science
                 </Link>
                 <Link
-                  href="#/courses/graphic-design"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Graphic Design
                 </Link>
                 <Link
-                  href="#/courses/digital-marketing"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Digital Marketing
@@ -274,19 +274,19 @@ const Navbar = () => {
             >
               <div className="w-full bg-black text-white border border-[#FFD700] rounded-lg shadow-lg mt-2">
                 <Link
-                  href="#/whatsnew/new-courses"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   New Courses
                 </Link>
                 <Link
-                  href="#/whatsnew/webinars"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Webinars
                 </Link>
                 <Link
-                  href="#/whatsnew/blog-posts"
+                  href="#"
                   className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Blog Posts
@@ -295,13 +295,13 @@ const Navbar = () => {
             </div>
           </div>
           <Link
-            href="#/verify"
+            href="#"
             className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             Verify
           </Link>
           <Link
-            href="#/contact"
+            href="#"
             className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             Contact Us
