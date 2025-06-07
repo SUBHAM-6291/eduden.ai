@@ -26,11 +26,11 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 font-gucina transition-colors duration-500 ${
-        isMenuOpen ? 'bg-white text-black' : 'bg-transparent text-white'
+        isMenuOpen ? 'bg-black text-white' : 'bg-black text-white'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex-shrink-0 w-32 sm:w-40 lg:w-52">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        <div className="flex-shrink-0 w-32 sm:w-36 md:w-40 lg:w-48 xl:w-52">
           <img
             src="/eduden.png"
             alt="EduDen Logo"
@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden focus:outline-none text-[#FFD700] transition-colors duration-500"
+          className="lg:hidden focus:outline-none text-white transition-colors duration-500"
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
         >
@@ -59,7 +59,7 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <div className="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
+        <div className="hidden lg:flex lg:items-center lg:space-x-4 xl:space-x-6">
           <Link href="#/" className="hover:text-[#FFD700] transition-colors duration-500">
             Home
           </Link>
@@ -67,19 +67,17 @@ const Navbar = () => {
             About Us
           </Link>
 
-          <div
-            className="relative group"
-            onMouseEnter={() => setIsCoursesOpen(true)}
-            onMouseLeave={() => setIsCoursesOpen(false)}
-          >
-            <Link
-              href="#/courses"
+          <div className="relative">
+            <button
               className="hover:text-[#FFD700] transition-colors duration-500 flex items-center"
+              onClick={toggleCourses}
+              onMouseEnter={() => setIsCoursesOpen(true)}
+              onMouseLeave={() => setIsCoursesOpen(false)}
             >
               Courses
               <span className="ml-1">
                 <svg
-                  className="w-5 h-5 group-hover:text-[#FFD700] transition-colors duration-500"
+                  className="w-5 h-5 hover:text-[#FFD700] transition-colors duration-500"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -92,30 +90,30 @@ const Navbar = () => {
                   />
                 </svg>
               </span>
-            </Link>
+            </button>
             {isCoursesOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-[#FFD700] text-black rounded-lg shadow-lg z-50 transition-all duration-500">
+              <div className="absolute left-0 mt-2 w-48 bg-black text-white border border-[#FFD700] rounded-lg shadow-lg z-50 transition-all duration-500">
                 <Link
                   href="#/courses/web-development"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Web Development
                 </Link>
                 <Link
                   href="#/courses/data-science"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Data Science
                 </Link>
                 <Link
                   href="#/courses/graphic-design"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Graphic Design
                 </Link>
                 <Link
                   href="#/courses/digital-marketing"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Digital Marketing
                 </Link>
@@ -123,19 +121,17 @@ const Navbar = () => {
             )}
           </div>
 
-          <div
-            className="relative group"
-            onMouseEnter={() => setIsWhatsNewOpen(true)}
-            onMouseLeave={() => setIsWhatsNewOpen(false)}
-          >
-            <Link
-              href="#/whatsnew"
+          <div className="relative">
+            <button
               className="hover:text-[#FFD700] transition-colors duration-500 flex items-center"
+              onClick={toggleWhatsNew}
+              onMouseEnter={() => setIsWhatsNewOpen(true)}
+              onMouseLeave={() => setIsWhatsNewOpen(false)}
             >
               What's New
               <span className="ml-1">
                 <svg
-                  className="w-5 h-5 group-hover:text-[#FFD700] transition-colors duration-500"
+                  className="w-5 h-5 hover:text-[#FFD700] transition-colors duration-500"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -148,24 +144,24 @@ const Navbar = () => {
                   />
                 </svg>
               </span>
-            </Link>
+            </button>
             {isWhatsNewOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-[#FFD700] text-black rounded-lg shadow-lg z-50 transition-all duration-500">
+              <div className="absolute left-0 mt-2 w-48 bg-black text-white border border-[#FFD700] rounded-lg shadow-lg z-50 transition-all duration-500">
                 <Link
                   href="#/whatsnew/new-courses"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   New Courses
                 </Link>
                 <Link
                   href="#/whatsnew/webinars"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Webinars
                 </Link>
                 <Link
                   href="#/whatsnew/blog-posts"
-                  className="block px-4 py-2 hover:bg-[#FFC107] hover:text-black transition-colors duration-500"
+                  className="block px-4 py-2 hover:bg-[#FFD700] hover:text-black transition-colors duration-500"
                 >
                   Blog Posts
                 </Link>
@@ -181,30 +177,30 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center">
-          <button className="border border-[#FFD700] rounded-full py-3 px-8 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out">
+        <div className="hidden lg:flex items-center">
+          <button className="border border-[#FFD700] rounded-full py-2 px-6 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out">
             Enroll Now
           </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden flex flex-col items-center w-full bg-white text-black space-y-4 py-4 transition-all duration-500">
+        <div className="lg:hidden flex flex-col items-center w-full bg-black text-white space-y-4 py-6 px-4 transition-all duration-500">
           <Link
             href="#/"
-            className="w-full text-center hover:text-[#FFD700] transition-colors duration-500"
+            className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             Home
           </Link>
           <Link
             href="#/about"
-            className="w-full text-center hover:text-[#FFD700] transition-colors duration-500"
+            className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             About Us
           </Link>
-          <div className="w-full">
+          <div className="w-full max-w-md">
             <button
-              className="w-full text-center hover:text-[#FFD700] transition-colors duration-500 flex items-center justify-center"
+              className="w-full text-center hover:text-[#FFD700] transition-colors duration-500 flex items-center justify-center py-2"
               onClick={toggleCourses}
             >
               Courses
@@ -222,46 +218,46 @@ const Navbar = () => {
             </button>
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isCoursesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                isCoursesOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="w-full bg-[#FFD700] text-black rounded-lg shadow-lg mt-2">
+              <div className="w-full bg-black text-white border border-[#FFD700] rounded-lg shadow-lg mt-2">
                 <Link
                   href="#/courses/web-development"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Web Development
                 </Link>
                 <Link
                   href="#/courses/data-science"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Data Science
                 </Link>
                 <Link
                   href="#/courses/graphic-design"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Graphic Design
                 </Link>
                 <Link
                   href="#/courses/digital-marketing"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Digital Marketing
                 </Link>
               </div>
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full max-w-md">
             <button
-              className="w-full text-center hover:text-[#FFD700] transition-colors duration-500 flex items-center justify-center"
+              className="w-full text-center hover:text-[#FFD700] transition-colors duration-500 flex items-center justify-center py-2"
               onClick={toggleWhatsNew}
             >
               What's New
               <span className="ml-2">
                 <svg
-                  className={`w-5 h-5 transition-transform duration-300 ${isWhatsNewOpen ? 'rotate-180' : ''}`}
+                  className={`w-5 h-5 transition-transform duration-300 ${isCoursesOpen ? 'rotate-180' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -273,25 +269,25 @@ const Navbar = () => {
             </button>
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isWhatsNewOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                isWhatsNewOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="w-full bg-[#FFD700] text-black rounded-lg shadow-lg mt-2">
+              <div className="w-full bg-black text-white border border-[#FFD700] rounded-lg shadow-lg mt-2">
                 <Link
                   href="#/whatsnew/new-courses"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   New Courses
                 </Link>
                 <Link
                   href="#/whatsnew/webinars"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Webinars
                 </Link>
                 <Link
                   href="#/whatsnew/blog-posts"
-                  className="block px-4 py-2 text-center hover:bg-[#FFC107] hover:text-black transition-colors duration-300"
+                  className="block px-4 py-2 text-center hover:bg-[#FFD700] hover:text-black transition-colors duration-300"
                 >
                   Blog Posts
                 </Link>
@@ -300,18 +296,18 @@ const Navbar = () => {
           </div>
           <Link
             href="#/verify"
-            className="w-full text-center hover:text-[#FFD700] transition-colors duration-500"
+            className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             Verify
           </Link>
           <Link
             href="#/contact"
-            className="w-full text-center hover:text-[#FFD700] transition-colors duration-500"
+            className="w-full max-w-md text-center hover:text-[#FFD700] transition-colors duration-500 py-2"
           >
             Contact Us
           </Link>
           <button
-            className="border border-[#FFD700] rounded-full py-3 px-8 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-500 ease-in-out"
+            className="w-full max-w-md border border-[#FFD700] rounded-full py-3 px-8 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-500 ease-in-out"
             onClick={toggleMenu}
           >
             Enroll Now
