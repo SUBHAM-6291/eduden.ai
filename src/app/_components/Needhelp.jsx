@@ -16,17 +16,22 @@ const Needhelp = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 text-white mb-8 md:mb-0">
-          <h1 className="font-gucina text-4xl sm:text-5xl md:text-5xl lg:text-4xl font-bold mb-4 whitespace-nowrap">
+          <h1 className="font-gucina text-2xl sm:text-5xl md:text-5xl lg:text-4xl font-bold mb-4 whitespace-nowrap">
             Need Help ?
           </h1>
-          <p className="lexend-body text-sm sm:text-base md:text-lg lg:text-lg max-w-[350px] leading-snug line-clamp-2">
-            Join the Learning Party Now – No Boring Stuff Allowed. Join the Learning Party Now – No Boring Stuff Allowed.
+          <p className="lexend-body text-xs sm:text-base md:text-lg lg:text-lg max-w-[250px] sm:max-w-[350px] leading-tight">
+            <span className="block">
+              Join the Learning Party Now – No Boring Stuff Allowed.
+            </span>
+            <span className="block text-[#FFD700] font-semibold">
+              Join the Learning Party Now – No Boring Stuff Allowed.
+            </span>
           </p>
         </div>
 
         <div className="md:w-1/2 flex justify-center md:justify-end">
           <button
-            className="font-gucina border border-[#FFD700] rounded-full bg-transparent text-[#FFD700] flex justify-center items-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out w-[7.5rem] sm:w-[8.125rem] md:w-[9rem] lg:w-[10rem] h-[2.5rem] sm:h-[2.75rem] md:h-[2.875rem] lg:h-[3rem] rounded-[3.125rem]"
+            className="font-gucina border border-[#FFD700] rounded-full bg-transparent text-[#FFD700] flex justify-center items-center gap-2 text-xs sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out w-[5rem] sm:w-[8.125rem] md:w-[9rem] lg:w-[10rem] h-[2rem] sm:h-[2.75rem] md:h-[2.875rem] lg:h-[3rem] rounded-[3.125rem]"
           >
             Contact Us <FaLongArrowAltRight />
           </button>
