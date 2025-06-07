@@ -178,7 +178,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center">
-          <button className="border border-[#FFD700] rounded-full py-3 px-6 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out">
+          <button className="border border-[#FFD700] rounded-full py-3 px-8 bg-transparent hover:bg-[#FFD700] hover:text-black hover:shadow-lg transition-all duration-700 ease-in-out">
             Enroll Now
           </button>
         </div>
