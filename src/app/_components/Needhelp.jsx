@@ -23,7 +23,7 @@ const Needhelp = () => {
             <span className="block">
               Join the Learning Party Now – No Boring Stuff Allowed.
             </span>
-            <span className="block text-[#FFD700] font-semibold">
+            <span className="block lexend-body ">
               Join the Learning Party Now – No Boring Stuff Allowed.
             </span>
           </p>
