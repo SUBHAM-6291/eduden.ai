@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const Faq = () => {
+const FAQ = () => {
   const [openSection, setOpenSection] = useState(null);
 
   const toggleSection = (index) => {
@@ -104,4 +104,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FAQ;

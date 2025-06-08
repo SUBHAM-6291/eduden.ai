@@ -4,7 +4,7 @@ import Aboutus from './_components/Aboutus'
 import Aboutus_Text from './_components/Aboutus_Text'
 import Footer from './_components/Footer'
 import Needhelp from './_components/Needhelp'
-import Faq from './_components/Faq'
+import FAQ from './_components/FAQ'
 import Video from './_components/Video'
 import Upcomingevents from './_components/Upcomingevents'
 import AllCourse from './_components/Allcourse'
@@ -19,7 +19,7 @@ const page = () => {
       <Video/>
       <Upcomingevents/>
       <Needhelp/>
-       <Faq/>
+       <FAQ/>
       <Footer/>
       
     </div>
