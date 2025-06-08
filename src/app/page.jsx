@@ -7,6 +7,7 @@ import Needhelp from './_components/Needhelp'
 import Faq from './_components/Faq'
 import Video from './_components/Video'
 import Upcomingevents from './_components/Upcomingevents'
+import AllCourse from './_components/Allcourse'
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <Navbar/>
       <Aboutus/>
       <Aboutus_Text/>
+      <AllCourse/>
       <Video/>
       <Upcomingevents/>
       
