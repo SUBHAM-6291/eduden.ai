@@ -18,8 +18,6 @@ const page = () => {
       <AllCourse/>
       <Video/>
       <Upcomingevents/>
-      
-    
       <Needhelp/>
        <Faq/>
       <Footer/>
