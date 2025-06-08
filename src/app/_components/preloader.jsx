@@ -1,4 +1,4 @@
-'use client';
+/*'use client';
 
 import { useState, useEffect } from 'react';
 
@@ -24,7 +24,7 @@ const Preloader = ({ children }) => {
           <img
             src="/eduden.png"
             alt="Loading..."
-            className="h-[80px] w-auto object-contain animate-spin-slow"
+            className="h-[80px] w-auto object-contain"
             onLoad={() => console.log('Image loaded')}
             onError={() => console.error('Image failed to load')}
           />
@@ -32,8 +32,8 @@ const Preloader = ({ children }) => {
       </div>
 
       <div
-        className={`transition-opacity duration-700 ${
-          isLoading ? 'opacity-0 hidden' : 'opacity-100 block animate-fade-in'
+        className={`transition-opacity duration-500 ${
+          isLoading ? 'opacity-0 hidden' : 'opacity-100 block'
         }`}
       >
         {children}
@@ -42,4 +42,4 @@ const Preloader = ({ children }) => {
   );
 };
 
-export default Preloader;
+export default Preloader;*/
