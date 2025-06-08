@@ -8,23 +8,26 @@ const Footer = () => {
         bg-[url(/footer.jpg)]
         bg-center
         bg-no-repeat
-        bg-contain
-        sm:bg-cover
+        bg-cover
         text-white
         w-full
         h-auto
         min-h-[30vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh]
+        relative
       "
     >
-      <div className="mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:max-w-[1619px] py-3 sm:py-6 md:py-8 lg:py-10 xl:py-12">
-        <div className="bg-black/80 sm:bg-black/75 rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+      {/* Black overlay covering the entire footer */}
+      <div className="absolute inset-0 bg-black/80"></div>
+      
+      <div className="relative mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:max-w-[1619px] py-3 sm:py-6 md:py-8 lg:py-10 xl:py-12">
+        <div className="rounded-lg p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:gap-6 lg:grid-cols-4 lg:gap-8 xl:gap-10">
-        
+            {/* Section 1: EduDen Logo and Description */}
             <div className="space-y-2 sm:space-y-4 md:space-y-5 text-left">
               <img
                 src="/eduden.png"
                 alt="EduDen Logo"
-                className="w-full max-w-[7rem] sm:max-w-[8rem]  md:max-w-[10rem] lg:max-w-[12rem] xl:max-w-[14rem] h-auto object-contain"
+                className="w-full max-w-[7rem] sm:max-w-[8rem] md:max-w-[10rem] lg:max-w-[12rem] xl:max-w-[14rem] h-auto object-contain"
                 loading="lazy"
               />
               <p className="lexend-body text-[0.6rem] sm:text-xs md:text-sm lg:text-base max-w-[150px] sm:max-w-[200px] md:max-w-xs">
@@ -86,6 +89,7 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Section 2: Quick Links */}
             <div className="space-y-2 sm:space-y-4 md:space-y-5 text-left">
               <h3 className="font-gucina text-[0.7rem] sm:text-sm md:text-base lg:text-lg font-semibold">
                 Quick Links
@@ -154,6 +158,7 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Section 3: Learning Platform */}
             <div className="space-y-2 sm:space-y-4 md:space-y-5 text-left">
               <h3 className="font-gucina text-[0.7rem] sm:text-sm md:text-base lg:text-lg font-semibold">
                 Learning Platform
@@ -218,6 +223,7 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Section 4: Get in Touch */}
             <div className="space-y-2 sm:space-y-4 md:space-y-5 text-left">
               <h3 className="font-gucina text-[0.7rem] sm:text-sm md:text-base lg:text-lg font-semibold">
                 Get in Touch
